@@ -26,5 +26,11 @@ Then(/^debo ver recibi "(.*?)"$/) do |letra|
   last_response.body.should =~ /#{letra}/m
 end
 
+Given(/^Se tienen "(.*?)"$/) do |intentos|
+  last_response.body.should =~ /#{intentos}/m
+end
+
+
+
 
 

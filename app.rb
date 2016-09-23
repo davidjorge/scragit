@@ -9,6 +9,7 @@ get '/' do
     @@palabra = @@scragit.palabra
     @@guiones = @@scragit.generar_guiones()
     @@sub_titulo = "Adivina la Palabra"
+    @@intentos = "5 intentos"
     erb :index
 end
 
@@ -16,6 +17,7 @@ post "/" do
   @letraRecibida=params[:inputLetra]
   
   @@guiones=@@scragit.coincidencias(@@palabra,@letraRecibida)
+  @@intentos = "4 intentos"
   erb :index
 
 end
