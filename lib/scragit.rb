@@ -2,9 +2,16 @@ class Scragit
   attr_accessor :palabra
   attr_accessor :guiones
   attr_accessor :palabraGuiones
+  attr_accessor :intentos
+  attr_accessor :contador
 
   def initialize 
   	generar_palabra
+    @intentos = 5
+  end
+
+  def descontar_intento()
+    @intentos = @intentos - 1
   end
 
   def generar_palabra
@@ -18,14 +25,24 @@ class Scragit
   end
 
   def coincidencias(palabra,letra)
-
-      palabraArray=["s","c","r","u","m"]            
+      coincidencia = false
+      contador = 0
+      palabraArray=["s","c","r","u","m"]
+      
       palabraArray.each_with_index {|item, index|
         if(item==letra) 
         	@palabraGuiones[index]=letra
+          contador = contador + 1
+          coincidencia = true
         end
       }
-      return @palabraGuiones.join(" ");	
+      
+      if(coincidencia == false)
+        descontar_intento()
+      end
+      @guiones = @palabraGuiones.join(" ");	
+      @contador = contador
+      return @guiones
   end
   
  def haGanado

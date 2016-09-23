@@ -26,16 +26,12 @@ Then(/^debo ver recibi "(.*?)"$/) do |letra|
   last_response.body.should =~ /#{letra}/m
 end
 
-Given(/^no hay guiones$/) do
-   last_response.body.should have_no_content ("_")
+Given(/^Se tienen "(.*?)"$/) do |intentos|
+  last_response.body.should =~ /#{intentos}/m
 end
 
-Then(/^debo ver Has ganado$/) do
-  last_response.body.should =~ /Has ganado/m
+When(/^numero de coincidencias es "(.*?)"$/) do |coincidencia|
+  last_response.body.should =~ /#{coincidencia}/m
 end
-
-
-
-
 
 
