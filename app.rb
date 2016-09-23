@@ -14,8 +14,11 @@ end
 
 post "/" do
   @letraRecibida=params[:inputLetra]
-  
+  @textoHaganado = ""
   @@guiones=@@scragit.coincidencias(@@palabra,@letraRecibida)
+  if @@scragit.haGanado
+   @textoHaganado = "Ha ganado"
+  end
   erb :index
 
 end

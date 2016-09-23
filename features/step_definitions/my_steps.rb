@@ -26,5 +26,16 @@ Then(/^debo ver recibi "(.*?)"$/) do |letra|
   last_response.body.should =~ /#{letra}/m
 end
 
+Given(/^no hay guiones$/) do
+   last_response.body.should have_no_content ("_")
+end
+
+Then(/^debo ver Has ganado$/) do
+  last_response.body.should =~ /Has ganado/m
+end
+
+
+
+
 
 

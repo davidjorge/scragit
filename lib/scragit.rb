@@ -1,6 +1,7 @@
 class Scragit
   attr_accessor :palabra
   attr_accessor :guiones
+  attr_accessor :palabraGuiones
 
   def initialize 
   	generar_palabra
@@ -18,9 +19,7 @@ class Scragit
 
   def coincidencias(palabra,letra)
 
-      palabraArray=["s","c","r","u","m"]
-            
-
+      palabraArray=["s","c","r","u","m"]            
       palabraArray.each_with_index {|item, index|
         if(item==letra) 
         	@palabraGuiones[index]=letra
@@ -28,4 +27,10 @@ class Scragit
       }
       return @palabraGuiones.join(" ");	
   end
+  
+ def haGanado
+ 	return @palabraGuiones.join("")== @palabra
+           
+ end
+
 end

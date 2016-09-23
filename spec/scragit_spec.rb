@@ -28,4 +28,17 @@ describe 'scragit' do
     expect(coincidencias).to be == "_ _ _ _ _"
   end
 
+ it 'Saber si no ha ganado' do
+    scragit = Scragit.new
+    coincidencias = scragit.haGanado
+    expect(coincidencias).to be == false
+  end
+
+  it 'Saber si ha ganado' do
+    scragit = Scragit.new
+    scragit.palabraGuiones = ["s","c","r","u","m"]
+    coincidencias = scragit.haGanado
+    expect(coincidencias).to be == true
+  end
+
 end
