@@ -14,7 +14,7 @@ end
 
 post "/" do
   @letraRecibida=params[:inputLetra]
-
+  @@guiones="s _ _ _ _"
   erb :index
 
 end
