@@ -1,5 +1,5 @@
 require 'sinatra'
-requiere './lib/scragit'
+require './lib/scragit'
 
 get '/' do
     @titulo = "Juego Ahorcalo"
@@ -7,8 +7,8 @@ get '/' do
 end
 
 get '/genera-palabra' do
-    @scragit = ScragIt.new
-    @scragit.generar_palabra()
+    scragit = Scragit.new
+    scragit.generar_palabra()
     @palabra = scragit.palabra
     @sub_titulo = "Adivina la Palabra"
     erb :index
