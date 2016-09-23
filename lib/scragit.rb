@@ -12,11 +12,15 @@ class Scragit
   end
 
   def coincidencias(palabra,letra)
-    if(palabra[0]==letra)
-      palabra[0]+" _ _ _ _"
-    else
-      "_ _ _ _ _"
-    end
-    
+
+      palabraArray=["s","c","r","u","m"]
+      palabraGuiones=["_","_","_","_","_"]      
+
+      palabraArray.each_with_index {|item, index|
+        if(item==letra) 
+        	palabraGuiones[index]=letra
+        end
+      }
+      palabraGuiones.join(" ");	
   end
 end
