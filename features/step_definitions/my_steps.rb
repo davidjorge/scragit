@@ -7,10 +7,10 @@ Then(/^debo ver "(.*?)"$/) do |frase|
 end
 
 When(/^genera palabra$/) do
-  visit '/genera-palabra'
+  visit '/'
 end
 
 When(/^genera palabra "(.*?)"$/) do |palabra|
-  visit '/genera-palabra-' + palabra
+  visit '/'
 end
 
