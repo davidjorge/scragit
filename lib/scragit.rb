@@ -2,8 +2,13 @@ class Scragit
   attr_accessor :palabra
   attr_accessor :guiones
 
+  def initialize 
+  	generar_palabra
+  end
+
   def generar_palabra
     @palabra = "scrum"
+    @palabraGuiones=["_","_","_","_","_"]
   end
 
   def generar_guiones
@@ -14,13 +19,13 @@ class Scragit
   def coincidencias(palabra,letra)
 
       palabraArray=["s","c","r","u","m"]
-      palabraGuiones=["_","_","_","_","_"]      
+            
 
       palabraArray.each_with_index {|item, index|
         if(item==letra) 
-        	palabraGuiones[index]=letra
+        	@palabraGuiones[index]=letra
         end
       }
-      palabraGuiones.join(" ");	
+      return @palabraGuiones.join(" ");	
   end
 end
