@@ -1,9 +1,15 @@
 class Scragit
   attr_accessor :palabra
   attr_accessor :guiones
+  attr_accessor :intentos
 
   def initialize 
   	generar_palabra
+    @intentos = 5
+  end
+
+  def descontar_intento()
+    @intentos = @intentos - 1
   end
 
   def generar_palabra

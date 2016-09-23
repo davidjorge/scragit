@@ -28,4 +28,17 @@ describe 'scragit' do
     expect(coincidencias).to be == "_ _ _ _ _"
   end
 
+  it 'Inicializar intentos' do
+    scragit = Scragit.new
+    intentos = scragit.intentos
+    expect(intentos).to be == 5
+  end
+
+  it 'Descontar intentos' do
+    scragit = Scragit.new
+    scragit.descontar_intento()
+    intentos = scragit.intentos
+    expect(intentos).to be == 4
+  end
+
 end
