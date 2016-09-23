@@ -16,10 +16,16 @@ describe 'scragit' do
     expect(guiones).to be == "_ _ _ _ _"
   end  
 
-  it 'Buscar coincidencia' do
+  it 'Buscar coincidencia s' do
     scragit = Scragit.new
     coincidencias = scragit.coincidencias("scrum","s")
     expect(coincidencias).to be == "s _ _ _ _"
+  end
+
+  it 'Buscar coincidencia a' do
+    scragit = Scragit.new
+    coincidencias = scragit.coincidencias("scrum","a")
+    expect(coincidencias).to be == "_ _ _ _ _"
   end
 
 end

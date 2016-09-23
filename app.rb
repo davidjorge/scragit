@@ -14,7 +14,10 @@ end
 
 post "/" do
   @letraRecibida=params[:inputLetra]
-  @@guiones="s _ _ _ _"
+  
+  scragit = Scragit.new
+  concidencias=scragit.coincidencias(@@palabra,@letraRecibida)
+  @@guiones= concidencias
   erb :index
 
 end

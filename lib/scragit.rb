@@ -13,7 +13,9 @@ class Scragit
 
   def coincidencias(palabra,letra)
     if(palabra[0]==letra)
-      "s _ _ _ _"
+      palabra[0]+" _ _ _ _"
+    else
+      "_ _ _ _ _"
     end
     
   end
