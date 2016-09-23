@@ -30,7 +30,8 @@ Given(/^Se tienen "(.*?)"$/) do |intentos|
   last_response.body.should =~ /#{intentos}/m
 end
 
-
-
+When(/^numero de coincidencias es "(.*?)"$/) do |coincidencia|
+  last_response.body.should =~ /#{coincidencia}/m
+end
 
 

@@ -36,7 +36,7 @@ describe 'scragit' do
 
   it 'Descontar intentos' do
     scragit = Scragit.new
-    scragit.descontar_intento()
+    scragit.coincidencias("scrum","a")
     intentos = scragit.intentos
     expect(intentos).to be == 4
   end
