@@ -10,3 +10,7 @@ When(/^genera palabra$/) do
   visit '/genera-palabra'
 end
 
+When(/^genera palabra "(.*?)"$/) do |palabra|
+  visit '/genera-palabra-' + palabra
+end
+

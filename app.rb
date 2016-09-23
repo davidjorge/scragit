@@ -13,3 +13,11 @@ get '/genera-palabra' do
     @sub_titulo = "Adivina la Palabra"
     erb :index
 end
+
+get '/genera-palabra-scrum' do
+    scragit = Scragit.new
+    scragit.generar_palabra()
+    @palabra = scragit.palabra
+    @guiones = "_ _ _ _ _"
+    erb :index
+end

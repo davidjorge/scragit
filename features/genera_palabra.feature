@@ -9,3 +9,4 @@ Scenario: Genera Palabra Scrum
   Given inicia el juego
 	When genera palabra
 	Then debo ver "Adivina la Palabra"
+
